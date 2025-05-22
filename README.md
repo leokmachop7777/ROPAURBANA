@@ -49,6 +49,24 @@ Abre XAMPP (u otra herramienta) y activa Apache y MySQL.
 Abre el navegador y accede al proyecto:
 http://localhost/nombre-del-proyecto/
 
+### 📦 Importación de la base de datos
+
+Para que la aplicación funcione correctamente, es necesario importar la base de datos que contiene las tablas del sistema. Sigue estos pasos:
+
+1. Abre **phpMyAdmin** en tu navegador:
+http://localhost/phpmyadmin
+
+2. Crea una nueva base de datos con el nombre:
+tu_tienda_urbana_db
+
+3. Una vez creada, haz clic sobre ella y luego selecciona la pestaña **"Importar"** en el menú superior.
+
+4. En la sección **"Archivo a importar"**, haz clic en **"Elegir archivo"** y selecciona el archivo `tu_tienda_urbana_db.sql` que se encuentra en la carpeta `/database/` de este proyecto.
+
+5. Haz clic en **"Continuar"** para completar la importación.
+
+Después de esto, todas las tablas necesarias estarán listas en tu entorno local.
+
 ## Contratación  
 Si quieres contratarme puedes escribirme a (leonardo44camacho@gmail.com) para consultas.
 
