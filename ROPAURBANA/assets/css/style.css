@@ -1,0 +1,439 @@
+/* --- PALETA DE COLORES Y TIPOGRAFÍA --- */
+:root {
+    --color-background: #121212; /* Negro/Gris muy oscuro */
+    --color-surface: #1E1E1E; /* Gris oscuro para tarjetas, modales */
+    --color-primary-text: #E0E0E0; /* Gris claro para texto principal */
+    --color-secondary-text: #A0A0A0; /* Gris medio para texto secundario */
+    --color-accent: #BB86FC; /* Lila (puedes cambiarlo por un metálico o blanco) */
+    --color-accent-hover: #a16ef7;
+    --color-border: #333333;
+
+    --font-primary: 'Montserrat', sans-serif;
+    --font-secondary: 'Roboto', sans-serif;
+}
+
+/* --- ESTILOS GENERALES --- */
+body {
+    background-color: var(--color-background);
+    color: var(--color-primary-text);
+    font-family: var(--font-secondary);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-primary);
+    font-weight: 700;
+    color: var(--color-primary-text);
+}
+
+a {
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--color-accent-hover);
+}
+
+.btn-accent {
+    background-color: var(--color-accent);
+    color: var(--color-background); /* Texto oscuro para contraste con acento claro */
+    border-color: var(--color-accent);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-accent:hover, .btn-accent:focus {
+    background-color: var(--color-accent-hover);
+    border-color: var(--color-accent-hover);
+    color: var(--color-background);
+}
+
+.btn-outline-light {
+    border-color: var(--color-secondary-text);
+    color: var(--color-secondary-text);
+}
+.btn-outline-light:hover {
+    border-color: var(--color-primary-text);
+    color: var(--color-primary-text);
+    background-color: rgba(255,255,255,0.1);
+}
+
+
+/* --- HEADER --- */
+.top-bar {
+    background-color: var(--color-surface);
+    color: var(--color-secondary-text);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+.top-bar span {
+    margin: 0 10px;
+}
+
+.main-navbar {
+    background-color: var(--color-background) !important; /* Forzar sobre Bootstrap */
+    border-bottom: 1px solid var(--color-border);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.navbar-brand {
+    font-family: var(--font-primary);
+    font-weight: 900; /* Extra bold */
+    font-size: 1.8rem;
+    color: var(--color-primary-text) !important;
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    color: var(--color-secondary-text) !important;
+    font-family: var(--font-primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 0.5rem;
+    font-size: 0.9rem;
+}
+
+.nav-link.active, .nav-link:hover {
+    color: var(--color-primary-text) !important;
+}
+
+.navbar-toggler {
+    border-color: var(--color-border);
+}
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28224, 224, 224, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+
+.dropdown-menu {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+}
+
+.dropdown-item {
+    color: var(--color-secondary-text);
+    font-family: var(--font-secondary);
+}
+
+.dropdown-item:hover, .dropdown-item:focus {
+    background-color: var(--color-border);
+    color: var(--color-primary-text);
+}
+
+.navbar-icons .nav-icon {
+    color: var(--color-secondary-text);
+    font-size: 1.2rem;
+    margin-left: 1.2rem;
+}
+.navbar-icons .nav-icon:hover {
+    color: var(--color-primary-text);
+}
+.navbar-icons .badge {
+    font-size: 0.7rem;
+    vertical-align: top;
+    margin-left: -5px;
+}
+
+
+/* --- CARRUSEL --- */
+#hero-carousel .carousel-item {
+    height: 70vh; /* Ajusta según tus imágenes */
+    min-height: 400px;
+}
+#hero-carousel .carousel-item img {
+    object-fit: cover;
+    height: 100%;
+    filter: brightness(0.6); /* Oscurecer un poco para el texto */
+}
+#hero-carousel .carousel-caption {
+    bottom: 15%;
+    background-color: rgba(0,0,0,0.3);
+    padding: 20px;
+    border-radius: 5px;
+}
+#hero-carousel .carousel-caption h5 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #fff;
+}
+#hero-carousel .carousel-caption p {
+    font-size: 1.2rem;
+    color: #f0f0f0;
+}
+#hero-carousel .carousel-indicators button {
+    background-color: var(--color-accent);
+}
+#hero-carousel .carousel-control-prev-icon,
+#hero-carousel .carousel-control-next-icon {
+    background-color: rgba(0,0,0,0.3);
+    border-radius: 50%;
+    padding: 20px; /* Aumenta el área del ícono */
+}
+
+
+/* --- TÍTULOS DE SECCIÓN --- */
+.section-title {
+    font-family: var(--font-primary);
+    font-weight: 900;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+}
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-accent);
+    margin: 0.5rem auto 0;
+}
+
+
+/* --- PRODUCTOS DESTACADOS --- */
+.product-card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Para que la imagen no se salga en el hover */
+}
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+.product-card .card-img-top {
+    aspect-ratio: 1 / 1; /* Para imágenes cuadradas, ajusta si es necesario */
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+.product-card:hover .card-img-top {
+    transform: scale(1.05);
+}
+.product-card .card-body {
+    padding: 1rem;
+}
+.product-card .card-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-primary-text);
+    min-height: 44px; /* Para alinear títulos de varias líneas */
+}
+.product-card .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+}
+
+/* --- SECCIÓN DE CATEGORÍAS --- */
+.category-card-link {
+    display: block;
+    text-decoration: none;
+}
+.category-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+}
+.category-card img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3; /* O la proporción que prefieras */
+    object-fit: cover;
+    transition: transform 0.4s ease, filter 0.4s ease;
+    filter: brightness(0.7); /* Oscurecer un poco para el texto */
+}
+.category-card:hover img {
+    transform: scale(1.1);
+    filter: brightness(0.5);
+}
+.category-card .category-title {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    color: #fff;
+    font-family: var(--font-primary);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    z-index: 2;
+    transition: bottom 0.3s ease;
+}
+.category-card:hover .category-title {
+    bottom: 30px;
+}
+
+
+/* --- FOOTER --- */
+.footer {
+    background-color: var(--color-surface);
+    color: var(--color-secondary-text);
+    border-top: 1px solid var(--color-border);
+}
+.footer h5 {
+    color: var(--color-primary-text);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+.footer p, .footer ul li a {
+    color: var(--color-secondary-text);
+    font-size: 0.9rem;
+}
+.footer ul {
+    padding-left: 0;
+}
+.footer ul li a:hover {
+    color: var(--color-primary-text);
+}
+.footer .social-icon {
+    font-size: 1.5rem;
+    color: var(--color-secondary-text);
+    margin: 0 0.5rem;
+}
+.footer .social-icon:hover {
+    color: var(--color-accent);
+}
+
+
+/* --- MODALES --- */
+.modal-content {
+    background-color: var(--color-surface);
+    color: var(--color-primary-text);
+    border: 1px solid var(--color-border);
+}
+.modal-header {
+    border-bottom: 1px solid var(--color-border);
+}
+.modal-header .modal-title {
+    color: var(--color-primary-text);
+}
+.btn-close-white { /* Bootstrap 5.2+ para ícono de cierre oscuro */
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+.modal-body .form-control {
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+    color: var(--color-primary-text);
+}
+.modal-body .form-control:focus {
+    background-color: var(--color-background);
+    border-color: var(--color-accent);
+    color: var(--color-primary-text);
+    box-shadow: 0 0 0 0.25rem rgba(var(--color-accent-rgb), 0.25); /* Necesitarías --color-accent-rgb */
+}
+.modal-body .form-label {
+    color: var(--color-secondary-text);
+}
+
+/* --- CARRITO (OFFCANVAS) --- */
+.offcanvas {
+    background-color: var(--color-surface);
+    color: var(--color-primary-text);
+    border-left: 1px solid var(--color-border);
+}
+.offcanvas-header {
+    border-bottom: 1px solid var(--color-border);
+}
+.offcanvas-title {
+    color: var(--color-primary-text);
+}
+#cart-items-container .cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--color-border);
+}
+#cart-items-container .cart-item:last-child {
+    border-bottom: none;
+}
+#cart-items-container .cart-item-image {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    margin-right: 1rem;
+    border-radius: 4px;
+}
+#cart-items-container .cart-item-details {
+    flex-grow: 1;
+}
+#cart-items-container .cart-item-name {
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+#cart-items-container .cart-item-price,
+#cart-items-container .cart-item-quantity {
+    font-size: 0.9rem;
+    color: var(--color-secondary-text);
+}
+#cart-items-container .cart-item-remove {
+    color: #dc3545; /* Rojo para eliminar */
+    cursor: pointer;
+    margin-left: 1rem;
+}
+#cart-items-container .cart-item-remove:hover {
+    color: #bd2130;
+}
+.cart-empty-message {
+    color: var(--color-secondary-text);
+    font-style: italic;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 991.98px) { /* Tablets y móviles */
+    .navbar-nav {
+        text-align: center;
+        margin-top: 1rem;
+    }
+    .nav-link {
+        padding: 0.8rem 0;
+    }
+    .navbar-icons {
+        margin-top: 1rem;
+        text-align: center;
+    }
+    .navbar-icons .nav-icon {
+        margin: 0 0.8rem;
+    }
+    #hero-carousel .carousel-item {
+        height: 50vh;
+    }
+    #hero-carousel .carousel-caption h5 {
+        font-size: 1.8rem;
+    }
+     #hero-carousel .carousel-caption p {
+        font-size: 1rem;
+    }
+    .filters {
+        justify-content: flex-start !important; /* Alinea filtros a la izquierda en móvil */
+    }
+}
+
+@media (max-width: 767.98px) { /* Móviles */
+    .top-bar {
+        font-size: 0.75rem;
+    }
+    .top-bar span {
+        display: block;
+        margin: 2px 0;
+    }
+    .section-title {
+        font-size: 1.5rem;
+    }
+    .product-card .card-title {
+        font-size: 1rem;
+        min-height: auto; /* Desactivar altura mínima en móviles */
+    }
+    .footer .col-md-4 {
+        text-align: center !important;
+    }
+}
